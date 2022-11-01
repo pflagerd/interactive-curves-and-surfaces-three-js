@@ -26,5 +26,5 @@ Thankfully, because [three.js](https://threejs.org/) is open source, ALL prior v
 
 3. Show your tutor what specifically impresses you about it.
 
-4. See if you find the version number of the latest version of [three.js](https://threejs.org/).  Show your tutor
+4. See if you find the version number of the latest version of [three.js](https://threejs.org/).  Show your tutor.  Hint: Versions of three.js take the form r999, where 'r' stands for 'revision'.
 
