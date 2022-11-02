@@ -18,11 +18,11 @@ CAGD is based on the creation of curves and surfaces and is accurately described
 
 Modern JavaScript-in-a-browser-development requires that we know a few things about the developer capabilities built into our browsers.  We'll focus on Chrome in these tutorials, although Edge and Firefox have nearly the same developer capabilities.
 
-1. Launch Chrome, and press the F12 key.  You see a panel open in your browser.  This panel contains the developer tools.
+1. Launch Chrome, and press the F12 key.  You see a panel open in your browser.  This panel contains the Developer Tools.
 
-2. Explore the tabs, and search the Internet to get an idea what each one means.  Show a couple to your tutor.
+2. Explore the tabs at the top of the Developer Tools pane (Elements, Console, Sources, Network, ...), and search the Internet to get an idea what each one means.  Show a couple to your tutor.
 
-3. Navigate to the Elements tab.  Notice that you see HTML code.  Find and take a short HTML tutorial from the Internet so you can answer simple questions about the HTML code you see.  Show your tutor what site you chose, and tell your tutor why you chose that site.
+3. Navigate to the Elements tab.  Notice that you see HTML code.  Find and take a short HTML tutorial course from the Internet so you can answer simple questions about the HTML code you see.  Show your tutor what site you chose, and tell your tutor why you chose that site.
 
 4. Show what you have learned about HTML to your tutor.
 
