@@ -1,12 +1,8 @@
-​	1D Rational function
+Types of Parametric Functions: Rational Polynomial Function
 
-8 TBD Types of ...
 
-​	nD Power Series
 
-9 TBD
-
-9 TBD Speed of ...
+9 Speed and Velocity of ...
 
 
 
