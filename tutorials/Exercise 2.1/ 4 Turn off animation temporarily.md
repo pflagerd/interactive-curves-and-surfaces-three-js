@@ -37,3 +37,7 @@ Click ![1623286781887](.md/ 4 Turn off animation temporarily/1623286781887.png):
 You see the following notification when the commit and push is complete:
 
 ![1623286935903](.md/ 4 Turn off animation temporarily/1623286935903.png)
+
+Now turn animation back on, and commit that change as well.
+
+NOTE: Don't forget to turn animation back on, or your tutor may fail your exercise!

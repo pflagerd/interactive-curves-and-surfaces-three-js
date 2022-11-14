@@ -32,7 +32,7 @@ We won't use this notation, because it seems to us too easy to confuse with $2.8
 
 **NOTE:**
 
-You may encounter notation to represent a 2D function like this:
+In some texts, you may encounter yet another notation representing a 2D function like this:
 
 ​	$$f(x, y)(t)\tag{2.8d}$$
 
@@ -45,3 +45,4 @@ You might also see the following notation for a 3D function:
 And this for a 4D function:
 
 ​	$$f(x, y, z, w)(t) \tag{2.8g}$$
+

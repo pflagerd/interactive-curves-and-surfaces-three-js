@@ -18,5 +18,5 @@ You can check out our solution to Exercise 2.5 by looking in `solutions/exercise
 
 
 
- NOTE: In case you are wondering why we used a different naming convention for `solutions/exercise-2.5` than we did for `tutorials/Exercise 2.5` it is because the former is more computer-friendly, and the latter is more human-friendly.
+NOTE: In case you are wondering why we used a different naming convention for `solutions/exercise-2.5` than we did for `tutorials/Exercise 2.5` it is because the former is more computer-friendly, and the latter is more human-friendly.
 
