@@ -10,7 +10,7 @@ Take four points in a plane and connect them to form a polygon.  The four points
 
 #### Exercise 1.5.1
 
-In this exercise, you'll create an application  in threejs using `template/` as a starting point.
+In this exercise, you'll create an application  in threejs using `template/` as a starting point.1.5.2
 
 1. Follow the detailed instructions in `template/README.md` describing how to create a new application using `template/` as a starting point.
 2. Make sure to read the code.  You'll want to keep the threejs documentation for r124 handy.  Look up the classes and methods as you read.  There's no faster way to learn threejs.
