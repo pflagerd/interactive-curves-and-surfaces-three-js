@@ -8,7 +8,7 @@ Even though it is available here in the `doc/` directory, you do not need to rea
 
 To grok this project's content, you should read the lessons in `md/`, in alphabetic order, sub-directory by sub-directory, file by file.
 
-For example, start reading `md/ 1 Introduction to CAGD/1.md`
+For example, start reading <a href="md/ 1 Introduction to CAGD/ 1 In this topic, you will learn.md">`md/ 1 Introduction to CAGD/ 1 In this topic, you will learn.md`</a>
 
 
 
