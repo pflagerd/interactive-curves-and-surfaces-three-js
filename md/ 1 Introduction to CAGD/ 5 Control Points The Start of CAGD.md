@@ -16,7 +16,7 @@ In this exercise, you'll create an application  in threejs using `template/` as 
 2. Make sure to read the code.  You'll want to keep the threejs documentation for r124 handy.  Look up the classes and methods as you read.  There's no faster way to learn threejs.
 3. After completing the instructions you should see a black screen with a sort of rotating cube that looks like this:
 
-![1629779170492](.md/ 5 Control Points The Start of CAGD/1629779170492-16305581768211.png)
+<img src=".md/ 5 Control Points The Start of CAGD/1629779170492.png" alt=""></img>
 
 4. Now turn off the animation.
 5. Show the result to your tutor.
@@ -25,7 +25,7 @@ In this exercise, you'll create an application  in threejs using `template/` as 
 
 6. You should see something like this when you're done:
 
-   ![image-20210901222017580](.md/ 5 Control Points The Start of CAGD/image-20210901222017580.png)
+   <img src=".md/ 5 Control Points The Start of CAGD/starscape.png"></img>
 
 7. Show your tutor.
 
