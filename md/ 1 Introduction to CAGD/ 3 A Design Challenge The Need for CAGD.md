@@ -23,20 +23,20 @@ You will need to refer to the three.js API documentation for version r124 a lot.
 
 1) Clone three.js from https://github.com/pflagerd/three.js
 
-2) `git checkout r124`
+1) Open a bash shell, and `cd three.js`
 
-3) If you haven't already, install nodejs from https://nodejs.org
+1) `git checkout r124`
 
-4) Open a bash shell, and `cd three.js`
+1) If you haven't already, install nodejs from https://nodejs.org
 
-5) `npm i http-server -g`
+1) `npm i http-server -g`
 
-6) `http-server -o docs/index.html`
+1) `http-server -o docs/index.html`
 
-7) You will see a browser open with the reference doc available:
+1) You will see a browser open with the reference doc available which looks something like this:
 
-   ![image-20210829213828210](.md/ 3 A Design Challenge The Need for CAGD/image-20210829213828210.png)
+![img_1.png](img_1.png)
 
 8) Use ^F to search the Reference docs for the word "points".
 
-9) Show your findings to your tutor, and explain how you might use what you found.
+1) Show your findings to your tutor, and explain how you might use what you found.
