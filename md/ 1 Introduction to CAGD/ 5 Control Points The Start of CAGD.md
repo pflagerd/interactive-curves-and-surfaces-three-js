@@ -21,15 +21,46 @@ In this exercise, you'll create an application  in threejs using `template/` as 
 4. Now turn off the animation.
 5. Show the result to your tutor.
 
-5. Remember when you searched the three.js documentation for "point"?  If you were paying attention, you will have seen an example where 10000 points were displayed, creating a sort of starscape. Comment out the code that created the cube and replace it with the code for the starscape.
 
-6. You should see something like this when you're done:
+<br>
+<br>
+
+#### Exercise 1.5.2
+
+1. Here is some sample code which you can use to create a kind of starscape.
+```javascript
+const vertices = [];
+
+for ( let i = 0; i < 10000; i ++ ) {
+
+const x = THREE.MathUtils.randFloatSpread( 2000 );
+const y = THREE.MathUtils.randFloatSpread( 2000 );
+const z = THREE.MathUtils.randFloatSpread( 2000 );
+
+vertices.push( x, y, z );
+
+}
+
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
+
+const material = new THREE.PointsMaterial( { color: 0x888888 } );
+
+const points = new THREE.Points( geometry, material );
+
+scene.add( points );
+```
+
+2. Create a new project from `template`, and use this code to render a starscape.
+
+2. You should see something like this when you're done:
 
    <img src=".md/ 5 Control Points The Start of CAGD/starscape.png"></img>
 
 7. Show your tutor.
 
-
+<br>
+<br>
 
 #### Exercise 1.5.2
 
