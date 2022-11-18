@@ -98,12 +98,13 @@ scene.add( line );
 ```
 6. This will establish an origin in the center of your browser. The x and y scales go from -10 to 10 so the line you drew before will touch the left and top of the screen:
 <img src=".md/ 5 Control Points The Start of CAGD/line-touches-left-and-top.png"></img>
-
 6. If you've begun to notice that the line is a big jaggy and awfully thin, try not to freak.  We'll get to that.
-6. Adjust the position of the end-points of the line to make it take the position approximately like that shown in the image at the top of page.
-8. Now draw two more lines so that you see something like this:
-5. asdf
-6. Now draw a circle of radius 1 something like this:
+   6. Adjust the position of the end-points of the line to make it take the position approximately like that shown in the image at the top of page.
+   <img src=".md/ 5 Control Points The Start of CAGD/top-line.png"></img>
+8. Can you figure out how to draw the remaining lines?  Don't worry about the little circles yet.
+   <img src=".md/ 5 Control Points The Start of CAGD/all-the-lines.png"></img>
+9. Did you notice that the lines went from vertex to vertex, and that the order of the vertices matters?
+9. Now use the CircleBufferGeometry class to create a circle and add it to the scene.
 7. asdf
 8. Now change its radius so it is the size of the circles on the little four-control-point image at the top of this page.
 9. asdf

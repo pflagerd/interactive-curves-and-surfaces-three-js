@@ -20,13 +20,21 @@ function main() {
     const material = new THREE.LineBasicMaterial({color: 0x000000});
 
     const points = [];
-    points.push( new THREE.Vector3( -10, 0, 0 ) );
-    points.push( new THREE.Vector3( 0, 10, 0 ) );
+    points.push( new THREE.Vector3( -8, -6, 0 ) );
+    points.push( new THREE.Vector3( -6, 6, 0 ) );
+    points.push( new THREE.Vector3( 6, 6, 0 ) );
+    points.push( new THREE.Vector3( 8, -6, 0 ) );
+    points.push( new THREE.Vector3( -8, -6, 0 ) );
 
     const geometry = new THREE.BufferGeometry().setFromPoints( points );
 
     const line = new THREE.Line( geometry, material );
     scene.add( line );
+
+    const circleGeometry = new THREE.CircleBufferGeometry( 5, 100 );
+    //circleGeometry.vertices.splice(0, 1);
+    const circle = new THREE.LineLoop( circleGeometry, material );
+    scene.add( circle );
 
     renderer.render( scene, camera );
 }
