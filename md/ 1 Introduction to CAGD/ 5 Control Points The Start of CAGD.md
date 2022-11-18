@@ -62,13 +62,30 @@ scene.add( points );
 <br>
 <br>
 
-#### Exercise 1.5.2
+#### Exercise 1.5.3
 
-In this exercise, you're going to draw a line.  Lines are part of what you're going to need to draw the little four-control-point image at the top of this page.
+In this exercise, you're going to draw the little four-control-point image at the top of this page.
 
-1. Write an application in threejs using `template/` as a starting point.
-2. Draw a single black line on a white background something like this:
-3. asdf
+1. Create a new project from `template/`.
+2. Draw a single black line on a white background. Here's some code to get you started:
+```javascript
+// Notice the change in camera position here.
+// Without this, you won't be able to see much (or any) of the line segment.
+camera.position.z = 15;
+
+const material = new THREE.LineBasicMaterial({color: 0x0000ff});
+
+const points = [];
+points.push( new THREE.Vector3( -10, 0, 0 ) );
+points.push( new THREE.Vector3( 0, 10, 0 ) );
+
+const geometry = new THREE.BufferGeometry().setFromPoints( points );
+
+const line = new THREE.Line( geometry, material );
+scene.add( line );
+```
+3. You should now see something like this
+<img style="padding-top: 1vmax;" src=".md/ 5 Control Points The Start of CAGD/line.png" alt=""></img>
 4. Now draw two more lines so that you see something like this:
 5. asdf
 6. Now draw a circle of radius 1 something like this:
