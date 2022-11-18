@@ -31,7 +31,7 @@ You will need to refer to the three.js API documentation for version r124 a lot.
 
 1) `npm i http-server -g`
 
-1) `http-server -o docs/index.html`
+1) `http-server -o docs/index.html -p 8081`
 
 1) You will see a browser open with the reference doc available which looks something like this:
 
