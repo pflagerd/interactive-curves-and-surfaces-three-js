@@ -27,6 +27,8 @@ In this exercise, you'll create an application  in threejs using `template/` as 
 
 #### Exercise 1.5.2
 
+1. Create a new project from `template/`, and use this code to render a starscape.
+
 1. Here is some sample code which you can use to create a kind of starscape.
 ```javascript
 const vertices = [];
@@ -51,8 +53,6 @@ const points = new THREE.Points( geometry, material );
 scene.add( points );
 ```
 
-2. Create a new project from `template`, and use this code to render a starscape.
-
 2. You should see something like this when you're done:
 
    <img src=".md/ 5 Control Points The Start of CAGD/starscape.png"></img>
@@ -62,7 +62,7 @@ scene.add( points );
 <br>
 <br>
 
-#### Exercise 1.5.3
+#### Exercise 1.5.4
 
 In this exercise, you're going to draw the little four-control-point image at the top of this page.
 
@@ -99,15 +99,15 @@ scene.add( line );
 6. This will establish an origin in the center of your browser. The x and y scales go from -10 to 10 so the line you drew before will touch the left and top of the screen:
 <img src=".md/ 5 Control Points The Start of CAGD/line-touches-left-and-top.png"></img>
 6. If you've begun to notice that the line is a big jaggy and awfully thin, try not to freak.  We'll get to that.
-   6. Adjust the position of the end-points of the line to make it take the position approximately like that shown in the image at the top of page.
-   <img src=".md/ 5 Control Points The Start of CAGD/top-line.png"></img>
+6. Adjust the position of the end-points of the line to make it take the position approximately like that shown in the image at the top of page.
+<img src=".md/ 5 Control Points The Start of CAGD/top-line.png"></img>
 8. Can you figure out how to draw the remaining lines?  Don't worry about the little circles yet.
    <img src=".md/ 5 Control Points The Start of CAGD/all-the-lines.png"></img>
 9. Did you notice that the lines went from vertex to vertex, and that the order of the vertices matters?
-9. Now use the CircleBufferGeometry class to create a circle and add it to the scene.
+9. Now you might be tempted to surf the three.js documentation, find and use the CircleBufferGeometry class to create a circle and add it to the scene, but this won't be very satisfying, because the CircleBufferGeometry should probably be named DiscBufferGeometry, because it's really a filled circle aka a DiscBufferGeometry.  Sadly, no such geometry exists, so we'll have to make our own.
 7. asdf
 8. Now change its radius so it is the size of the circles on the little four-control-point image at the top of this page.
-9. asdf
+9. Let's do this right in an object-oriented way.  Let's create a class called 
 10. Now position its center so that it looks like this:
 11. asdf
 12. Now add a second circle like this:
