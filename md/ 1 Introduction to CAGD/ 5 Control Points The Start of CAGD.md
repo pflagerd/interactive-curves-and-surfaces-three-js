@@ -140,26 +140,45 @@ class CircleBufferGeometry extends BufferGeometry {
 }
 ```
 9. Can you figure out how to use this code. 
-9. Now position its center so that it looks like this:
-9. asdf
-9. Now add a second circle like this:
-9. asdf
-14. And finally draw a rectangle around it all like this:
-15. asdf
-16. Show your tutor
+9. 
 
+[//]: # (10. Now position its center so that it looks like this:)
 
+[//]: # (9. asdf)
 
-#### Exercise 1.5.4
+[//]: # (9. Now add a second circle like this:)
 
-In this section you're going to make your drawing object-oriented (if you haven't already).  You should have a class for a Line, a Circle and a Rectangle.  These should not conflict with anything of the same name in three.js
+[//]: # (9. asdf)
 
-1. Create a Line class
-2. Create three instances of the class, one for each of the three lines from 1.5.2
-3. Create a Circle class
-4. Create two instances of the class, one for each of the circles from 1.5.2
-5. Create a Rectangle class
-6. Create one instance of the class for the rectangle from 1.5.2
-7. Your result should look the same as that of 1.5.2
-8. asdf
-9. Show your tutor your code and your drawing.
+[//]: # (14. And finally draw a rectangle around it all like this:)
+
+[//]: # (15. asdf)
+
+[//]: # (16. Show your tutor)
+
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (#### Exercise 1.5.4)
+
+[//]: # ()
+[//]: # (In this section you're going to make your drawing object-oriented &#40;if you haven't already&#41;.  You should have a class for a Line, a Circle and a Rectangle.  These should not conflict with anything of the same name in three.js)
+
+[//]: # ()
+[//]: # (1. Create a Line class)
+
+[//]: # (2. Create three instances of the class, one for each of the three lines from 1.5.2)
+
+[//]: # (3. Create a Circle class)
+
+[//]: # (4. Create two instances of the class, one for each of the circles from 1.5.2)
+
+[//]: # (5. Create a Rectangle class)
+
+[//]: # (6. Create one instance of the class for the rectangle from 1.5.2)
+
+[//]: # (7. Your result should look the same as that of 1.5.2)
+
+[//]: # (8. asdf)
+
+[//]: # (9. Show your tutor your code and your drawing.)
