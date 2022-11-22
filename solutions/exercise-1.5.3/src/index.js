@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { BufferGeometry } from 'three';
 
-class CircleGeometry extends BufferGeometry {
+class CircleBufferGeometry extends BufferGeometry {
     radius = 1;
     x = 0; y = 0;
     segments = 32;
@@ -60,25 +60,25 @@ function main() {
     scene.add( line );
 
     {
-        const circleGeometry = new CircleGeometry(0.2, -8, -6);
+        const circleGeometry = new CircleBufferGeometry(0.2, -8, -6);
         const circle = new THREE.LineLoop(circleGeometry, material);
         scene.add(circle);
     }
 
     {
-        const circleGeometry = new CircleGeometry(0.2, -6, 6);
+        const circleGeometry = new CircleBufferGeometry(0.2, -6, 6);
         const circle = new THREE.LineLoop(circleGeometry, material);
         scene.add(circle);
     }
 
     {
-        const circleGeometry = new CircleGeometry(0.2, 6, 6);
+        const circleGeometry = new CircleBufferGeometry(0.2, 6, 6);
         const circle = new THREE.LineLoop(circleGeometry, material);
         scene.add(circle);
     }
 
     {
-        const circleGeometry = new CircleGeometry(0.2, 8, -6);
+        const circleGeometry = new CircleBufferGeometry(0.2, 8, -6);
         const circle = new THREE.LineLoop(circleGeometry, material);
         scene.add(circle);
     }

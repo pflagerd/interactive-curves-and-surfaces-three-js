@@ -62,7 +62,7 @@ scene.add( points );
 <br>
 <br>
 
-#### Exercise 1.5.4
+#### Exercise 1.5.3
 
 In this exercise, you're going to draw the little four-control-point image at the top of this page.
 
@@ -105,9 +105,41 @@ scene.add( line );
    <img src=".md/ 5 Control Points The Start of CAGD/all-the-lines.png"></img>
 9. Did you notice that the lines went from vertex to vertex, and that the order of the vertices matters?
 9. Now you might be tempted to surf the three.js documentation, find and use the CircleBufferGeometry class to create a circle and add it to the scene, but this won't be very satisfying, because the CircleBufferGeometry displays a filled circle rather than a line circle. THREE.CircleBufferGeometry should probably be named THREE.DiscBufferGeometry. Sadly, no appropriate CircleBufferGeometry exists, so we'll have to make our own.
-9. To create our own CircleBufferGeometry, we can define our own class extending BufferGeometry.  The syntax for javascript classes may be found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
-9. Now change its radius so it is the size of the circles on the little four-control-point image at the top of this page.
-9. Let's do this right in an object-oriented way.  Let's create a class called 
+9. To create our own CircleBufferGeometry, we can define our own class extending BufferGeometry.  The syntax for javascript classes may be found in the Mozilla Development Network (MDN) site [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
+9. Can you start designing the class definition based on the example of Rectangle from the MDN page? 
+10. Here's some code to use to get started:
+```javascript
+import { BufferGeometry } from 'three';
+
+class CircleBufferGeometry extends BufferGeometry {
+    radius = 1;
+    x = 0; y = 0;
+    segments = 32;
+    vertices = [];
+
+    constructor(/* double */ radius, /* double */ x, /* double */ y, /* int */ segments) {
+        super();
+
+        if (radius)
+            this.radius = radius;
+
+        if (x)
+            this.x = x;
+
+        if (y)
+            this.y = y;
+
+        if (segments)
+            this.segments = segments;
+
+        for (let angle = 0, segment = 0; segment <= this.segments; angle = segment * 2 * Math.PI / this.segments, segment++) {
+            this.vertices.push( new THREE.Vector3( this.x + this.radius * Math.cos(angle), this.y + this.radius * Math.sin(angle), 0 ) );
+        }
+        this.setFromPoints( this.vertices );
+    }
+}
+```
+9. Can you figure out how to use this code. 
 9. Now position its center so that it looks like this:
 9. asdf
 9. Now add a second circle like this:
@@ -118,7 +150,7 @@ scene.add( line );
 
 
 
-#### Exercise 1.5.3
+#### Exercise 1.5.4
 
 In this section you're going to make your drawing object-oriented (if you haven't already).  You should have a class for a Line, a Circle and a Rectangle.  These should not conflict with anything of the same name in three.js
 
