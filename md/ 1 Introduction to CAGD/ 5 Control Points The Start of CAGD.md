@@ -71,9 +71,11 @@ In this exercise, you're going to draw the little four-control-point image at th
 ```javascript
 // Notice the change in camera position here.
 // Without this, you won't be able to see much (or any) of the line segment.
+scene.background = new THREE.Color(0xFFFFFF)
+
 camera.position.z = 15;
 
-const material = new THREE.LineBasicMaterial({color: 0x0000ff});
+const material = new THREE.LineBasicMaterial({color: 0x000000});
 
 const points = [];
 points.push( new THREE.Vector3( -10, 0, 0 ) );
@@ -106,8 +108,7 @@ scene.add( line );
 9. Did you notice that the lines went from vertex to vertex, and that the order of the vertices matters?
 9. Now you might be tempted to surf the three.js documentation, find and use the CircleBufferGeometry class to create a circle and add it to the scene, but this won't be very satisfying, because the CircleBufferGeometry displays a filled circle rather than a line circle. THREE.CircleBufferGeometry should probably be named THREE.DiscBufferGeometry. Sadly, no appropriate CircleBufferGeometry exists, so we'll have to make our own.
 9. To create our own CircleBufferGeometry, we can define our own class extending BufferGeometry.  The syntax for javascript classes may be found in the Mozilla Development Network (MDN) site [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
-9. Can you start designing the class definition based on the example of Rectangle from the MDN page? 
-10. Here's some code to use to get started:
+10. Here's some code to use to get started with our own CircleBufferGeometry:
 ```javascript
 import { BufferGeometry } from 'three';
 
