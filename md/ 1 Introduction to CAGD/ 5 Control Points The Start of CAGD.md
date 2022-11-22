@@ -88,7 +88,7 @@ scene.add( line );
 ```
 3. You should now see something like this
    <img src=".md/ 5 Control Points The Start of CAGD/line-touches-left-and-top.png"></img>
-5. Up to now, we've been using a PerspectiveCamera, but for most of our examples, we'll be working in 2D, so let's replace our PerspectiveCamera with an Orthographic Camera.
+5. Up to now, we've been using a PerspectiveCamera, but for most of our examples, we'll be working in 2D, so let's replace our PerspectiveCamera with an Orthographic Camera. In 2D, perspective is kind of irrelevant.  An Orthographic Camera is essentially a camera WITHOUT perspective.
 ```javascript
    const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, 1, 1000 );
 ```
@@ -97,9 +97,8 @@ scene.add( line );
 6. If you've begun to notice that the line is a big jaggy and awfully thin, try not to freak.  We'll get to that.
 6. Adjust the position of the end-points of the line to make it take the position approximately like that shown in the image at the top of page.
 <img src=".md/ 5 Control Points The Start of CAGD/top-line.png"></img>
-8. Can you figure out how to draw the remaining lines?  Don't worry about the little circles yet.
+8. Can you figure out how to draw the remaining lines?  Don't worry about the little circles yet. Hint: Lines are drawn from vertex to vertex, and the order of the vertices matters.
    <img src=".md/ 5 Control Points The Start of CAGD/all-the-lines.png"></img>
-9. Did you notice that the lines went from vertex to vertex, and that the order of the vertices matters?
 9. Now you might be tempted to surf the three.js documentation, find and use the CircleBufferGeometry class to create a circle and add it to the scene, but this won't be very satisfying, because the CircleBufferGeometry displays a filled circle rather than a line circle. THREE.CircleBufferGeometry should probably be named THREE.DiscBufferGeometry. Sadly, no appropriate CircleBufferGeometry exists, so we'll have to make our own.
 9. To create our own CircleBufferGeometry, we can define our own class extending BufferGeometry.  The syntax for javascript classes may be found in the Mozilla Development Network (MDN) site [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
 10. Here's some code to use to get started with our own CircleBufferGeometry:
@@ -113,29 +112,29 @@ class CircleBufferGeometry extends BufferGeometry {
     vertices = [];
 
     constructor(/* double */ radius, /* double */ x, /* double */ y, /* int */ segments) {
-        super();
-
-        if (radius)
-            this.radius = radius;
-
-        if (x)
-            this.x = x;
-
-        if (y)
-            this.y = y;
-
-        if (segments)
-            this.segments = segments;
-
-        for (let angle = 0, segment = 0; segment <= this.segments; angle = segment * 2 * Math.PI / this.segments, segment++) {
-            this.vertices.push( new THREE.Vector3( this.x + this.radius * Math.cos(angle), this.y + this.radius * Math.sin(angle), 0 ) );
-        }
-        this.setFromPoints( this.vertices );
-    }
+       super();
+   
+       if (radius)
+          this.radius = radius;
+   
+       if (x)
+          this.x = x;
+   
+       if (y)
+          this.y = y;
+   
+       if (segments)
+          this.segments = segments;
+   
+      for (let angle = 0, segment = 0; segment <= this.segments; angle = segment * 2 * Math.PI / this.segments, segment++) {
+          this.vertices.push( new THREE.Vector3( this.x + this.radius * Math.cos(angle), this.y + this.radius * Math.sin(angle), 0 ) );
+      }
+      this.vertices.push(this.x + this.radius, this.y + this.radius, 0);
+      this.setFromPoints( this.vertices );
+   }
 }
 ```
-9. Can you figure out how to use this code. 
-9. 
+9. As a last finishing touch (assuming you have the three lines and four little circles), can you draw a rectangle around the whole thing.
 
 [//]: # (10. Now position its center so that it looks like this:)
 

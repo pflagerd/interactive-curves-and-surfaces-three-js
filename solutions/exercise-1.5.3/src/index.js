@@ -25,6 +25,7 @@ class CircleBufferGeometry extends BufferGeometry {
         for (let angle = 0, segment = 0; segment <= this.segments; angle = segment * 2 * Math.PI / this.segments, segment++) {
             this.vertices.push( new THREE.Vector3( this.x + this.radius * Math.cos(angle), this.y + this.radius * Math.sin(angle), 0 ) );
         }
+        this.vertices.push(this.x + this.radius, this.y + this.radius, 0);
         this.setFromPoints( this.vertices );
     }
 }
@@ -61,25 +62,25 @@ function main() {
 
     {
         const circleGeometry = new CircleBufferGeometry(0.2, -8, -6);
-        const circle = new THREE.LineLoop(circleGeometry, material);
+        const circle = new THREE.Line(circleGeometry, material);
         scene.add(circle);
     }
 
     {
         const circleGeometry = new CircleBufferGeometry(0.2, -6, 6);
-        const circle = new THREE.LineLoop(circleGeometry, material);
+        const circle = new THREE.Line(circleGeometry, material);
         scene.add(circle);
     }
 
     {
         const circleGeometry = new CircleBufferGeometry(0.2, 6, 6);
-        const circle = new THREE.LineLoop(circleGeometry, material);
+        const circle = new THREE.Line(circleGeometry, material);
         scene.add(circle);
     }
 
     {
         const circleGeometry = new CircleBufferGeometry(0.2, 8, -6);
-        const circle = new THREE.LineLoop(circleGeometry, material);
+        const circle = new THREE.Line(circleGeometry, material);
         scene.add(circle);
     }
 
