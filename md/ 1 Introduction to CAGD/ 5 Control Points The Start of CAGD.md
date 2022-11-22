@@ -104,14 +104,14 @@ scene.add( line );
 8. Can you figure out how to draw the remaining lines?  Don't worry about the little circles yet.
    <img src=".md/ 5 Control Points The Start of CAGD/all-the-lines.png"></img>
 9. Did you notice that the lines went from vertex to vertex, and that the order of the vertices matters?
-9. Now you might be tempted to surf the three.js documentation, find and use the CircleBufferGeometry class to create a circle and add it to the scene, but this won't be very satisfying, because the CircleBufferGeometry should probably be named DiscBufferGeometry, because it's really a filled circle aka a DiscBufferGeometry.  Sadly, no such geometry exists, so we'll have to make our own.
-7. asdf
-8. Now change its radius so it is the size of the circles on the little four-control-point image at the top of this page.
+9. Now you might be tempted to surf the three.js documentation, find and use the CircleBufferGeometry class to create a circle and add it to the scene, but this won't be very satisfying, because the CircleBufferGeometry displays a filled circle rather than a line circle. THREE.CircleBufferGeometry should probably be named THREE.DiscBufferGeometry. Sadly, no appropriate CircleBufferGeometry exists, so we'll have to make our own.
+9. To create our own CircleBufferGeometry, we can define our own class extending BufferGeometry.  The syntax for javascript classes may be found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
+9. Now change its radius so it is the size of the circles on the little four-control-point image at the top of this page.
 9. Let's do this right in an object-oriented way.  Let's create a class called 
-10. Now position its center so that it looks like this:
-11. asdf
-12. Now add a second circle like this:
-13. asdf
+9. Now position its center so that it looks like this:
+9. asdf
+9. Now add a second circle like this:
+9. asdf
 14. And finally draw a rectangle around it all like this:
 15. asdf
 16. Show your tutor
