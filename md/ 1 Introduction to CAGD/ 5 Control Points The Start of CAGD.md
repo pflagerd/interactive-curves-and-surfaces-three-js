@@ -87,13 +87,7 @@ const line = new THREE.Line( geometry, material );
 scene.add( line );
 ```
 3. You should now see something like this
-<img style="padding-top: 1vmax;" src=".md/ 5 Control Points The Start of CAGD/line.png" alt=""></img>
-4. This is a start, but doesn't look much like the image at the top of this page.  For one thing it's a blue line on a black background, and what we need is a black line on a white background.
-4. Let's start by changing the background to white.  Here's a snippet.
-```javascript
-    scene.background = new THREE.Color(0xFFFFFF)
-```
-4. Can you guess how to change the line color to black?
+   <img src=".md/ 5 Control Points The Start of CAGD/line-touches-left-and-top.png"></img>
 5. Up to now, we've been using a PerspectiveCamera, but for most of our examples, we'll be working in 2D, so let's replace our PerspectiveCamera with an Orthographic Camera.
 ```javascript
    const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, 1, 1000 );
