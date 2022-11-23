@@ -67,6 +67,19 @@ class CenteredRectangleBufferGeometry extends BufferGeometry {
     }
 }
 
+class ThreeLineSegmentBufferGeometry extends BufferGeometry {
+    vertices = [];
+
+    constructor() {
+        super();
+        this.vertices.push( new THREE.Vector3( -8, -6, 0 ) );
+        this.vertices.push( new THREE.Vector3( -6, 6, 0 ) );
+        this.vertices.push( new THREE.Vector3( 6, 6, 0 ) );
+        this.vertices.push( new THREE.Vector3( 8, -6, 0 ) );
+        this.setFromPoints( this.vertices );
+    }
+}
+
 function main() {
     document.body.style.margin = "0";
     document.body.style.padding = "0";
@@ -86,16 +99,10 @@ function main() {
 
     const material = new THREE.LineBasicMaterial({color: 0x000000});
 
-    const vertices = [];
-    vertices.push( new THREE.Vector3( -8, -6, 0 ) );
-    vertices.push( new THREE.Vector3( -6, 6, 0 ) );
-    vertices.push( new THREE.Vector3( 6, 6, 0 ) );
-    vertices.push( new THREE.Vector3( 8, -6, 0 ) );
 
-    const geometry = new THREE.BufferGeometry().setFromPoints( vertices );
-
-    const line = new THREE.Line( geometry, material );
-    scene.add( line );
+    const threeLineGeometry = new ThreeLineSegmentBufferGeometry();
+    const threeLine = new THREE.Line( threeLineGeometry, material );
+    scene.add( threeLine );
 
     {
         const circleGeometry = new CircleBufferGeometry(0.2, -8, -6);
