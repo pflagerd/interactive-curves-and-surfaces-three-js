@@ -30,6 +30,43 @@ class CircleBufferGeometry extends BufferGeometry {
     }
 }
 
+class CenteredRectangleBufferGeometry extends BufferGeometry {
+    angle = 0;
+    height = 1;
+    vertices = [];
+    width = 1;
+    x = 0;
+    y = 0;
+
+    constructor(/* double */ width, /*double */ height, /* double */ x, /* double */ y, /* double */ angle) {
+        super();
+
+        if (width)
+            this.width = width;
+
+        if (height)
+            this.height = height;
+
+        if (x)
+            this.x = x;
+
+        if (y)
+            this.y = y;
+
+        if (angle)
+            this.angle = angle;
+
+        // DPP: TODO: Implement angle.
+        this.vertices.push(new THREE.Vector3(this.x - this.width / 2, this.y + this.height / 2, 0));
+        this.vertices.push(new THREE.Vector3(this.x + this.width / 2, this.y + this.height / 2, 0));
+        this.vertices.push(new THREE.Vector3(this.x + this.width / 2, this.y - this.height / 2, 0));
+        this.vertices.push(new THREE.Vector3(this.x - this.width / 2, this.y - this.height / 2, 0));
+        this.vertices.push(new THREE.Vector3(this.x - this.width / 2, this.y + this.height / 2, 0));
+
+        this.setFromPoints( this.vertices );
+    }
+}
+
 function main() {
     document.body.style.margin = "0";
     document.body.style.padding = "0";
@@ -49,13 +86,13 @@ function main() {
 
     const material = new THREE.LineBasicMaterial({color: 0x000000});
 
-    const points = [];
-    points.push( new THREE.Vector3( -8, -6, 0 ) );
-    points.push( new THREE.Vector3( -6, 6, 0 ) );
-    points.push( new THREE.Vector3( 6, 6, 0 ) );
-    points.push( new THREE.Vector3( 8, -6, 0 ) );
+    const vertices = [];
+    vertices.push( new THREE.Vector3( -8, -6, 0 ) );
+    vertices.push( new THREE.Vector3( -6, 6, 0 ) );
+    vertices.push( new THREE.Vector3( 6, 6, 0 ) );
+    vertices.push( new THREE.Vector3( 8, -6, 0 ) );
 
-    const geometry = new THREE.BufferGeometry().setFromPoints( points );
+    const geometry = new THREE.BufferGeometry().setFromPoints( vertices );
 
     const line = new THREE.Line( geometry, material );
     scene.add( line );
@@ -82,6 +119,12 @@ function main() {
         const circleGeometry = new CircleBufferGeometry(0.2, 8, -6);
         const circle = new THREE.Line(circleGeometry, material);
         scene.add(circle);
+    }
+
+    {
+        const centeredRectangleGeometry = new CenteredRectangleBufferGeometry(18, 16);
+        const centeredRectangle = new THREE.Line(centeredRectangleGeometry, material);
+        scene.add(centeredRectangle);
     }
 
     renderer.render( scene, camera );

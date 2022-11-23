@@ -134,7 +134,9 @@ class CircleBufferGeometry extends BufferGeometry {
    }
 }
 ```
-9. As a last finishing touch (assuming you have the three lines and four little circles), can you draw a rectangle around the whole thing.
+9. As a last finishing touch (assuming you have the three lines and four little circles), can you draw a rectangle around the whole thing?
+10. For extra karma, can you adapt the circle class to make a rectangle class?
+![img_2.png](img_2.png)
 
 [//]: # (10. Now position its center so that it looks like this:)
 
