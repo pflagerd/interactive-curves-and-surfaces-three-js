@@ -56,7 +56,6 @@ class CenteredRectangleBufferGeometry extends BufferGeometry {
         if (angle)
             this.angle = angle;
 
-        // DPP: TODO: Implement angle.
         this.vertices.push(new THREE.Vector3(this.x - this.width / 2, this.y + this.height / 2, 0));
         this.vertices.push(new THREE.Vector3(this.x + this.width / 2, this.y + this.height / 2, 0));
         this.vertices.push(new THREE.Vector3(this.x + this.width / 2, this.y - this.height / 2, 0));
@@ -64,6 +63,7 @@ class CenteredRectangleBufferGeometry extends BufferGeometry {
         this.vertices.push(new THREE.Vector3(this.x - this.width / 2, this.y + this.height / 2, 0));
 
         this.setFromPoints( this.vertices );
+        this.rotateZ(this.angle);
     }
 }
 
