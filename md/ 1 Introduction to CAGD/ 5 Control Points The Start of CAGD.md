@@ -53,7 +53,7 @@ const points = new THREE.Points( geometry, material );
 scene.add( points );
 ```
 
-2. You should see something like this when you're done:
+3. You should see something like this when you're done:
 
    <img src=".md/ 5 Control Points The Start of CAGD/starscape.png"></img>
 
@@ -92,7 +92,7 @@ scene.add( line );
 ```javascript
    const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, 1, 1000 );
 ```
-6. This will establish an origin in the center of your browser. The x and y scales go from -10 to 10 so the line you drew before will touch the left and top of the screen:
+5. This will establish an origin in the center of your browser. The x and y scales go from -10 to 10 so the line you drew before will touch the left and top of the screen:
 <img src=".md/ 5 Control Points The Start of CAGD/line-touches-left-and-top.png"></img>
 6. If you've begun to notice that the line is a big jaggy and awfully thin, try not to freak.  We'll get to that.
 6. Adjust the position of the end-points of the line to make it take the position approximately like that shown in the image at the top of page.
@@ -134,7 +134,7 @@ class CircleBufferGeometry extends BufferGeometry {
    }
 }
 ```
-9. As a last finishing touch (assuming you have the three lines and four little circles), can you draw a rectangle around the whole thing?
+12. As a last finishing touch (assuming you have the three lines and four little circles), can you draw a rectangle around the whole thing?
 10. For extra karma, can you adapt the circle class to make a rectangle class?
 ![img_2.png](img_2.png)
 
