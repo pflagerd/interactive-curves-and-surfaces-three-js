@@ -29,4 +29,5 @@ In this exercise, you're going to draw add an arc to your last exercise.
 #### Exercise 1.6.2
 
 1. For extra karma, attempt to produce something that looks like the image above using a cubic polynomial: $y = ax^3 + bx^2 + bx + d$
-2. Don't be surprised if this takes a while to figure out.
+2. Don't be surprised if this takes a long time to figure out, and feel free to give up for now.
+3. The point is that it's freaking hard to make a cubic fit the points nicely by hand.
