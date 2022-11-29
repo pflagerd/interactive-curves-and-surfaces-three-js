@@ -11,6 +11,8 @@ A cubic Bézier has four control points which are shown here numbered $1$ to $4$
 
 Are you beginning to see why Bézier curves are used so frequently in CAGD?
 
+
+
 #### Exercise 1.6.1
 
 In this exercise, you're going to draw add an arc to your last exercise.
@@ -20,6 +22,11 @@ In this exercise, you're going to draw add an arc to your last exercise.
 3. Construct the Line geometry from a set of points based on a quadratic polynomial: $y = ax^2 + bx + c$
 4. Attempt to make your rendering look approximately like the image at the start of this page.
 5. Make sure that you encapsulate this geometry as its own class.
-7. Don't be surprised if this takes quite a while to get looking right. It's tricky.
-8. For extra karma, attempt to produce something that looks like the image above using a cubic polynomial: $y = ax^3 + bx^2 + bx + d.
-9. Don't be surprised if this takes a while to figure out.
+6. Don't be surprised if this takes quite a while to get looking right. It's tricky.
+
+
+
+#### Exercise 1.6.2
+
+1. For extra karma, attempt to produce something that looks like the image above using a cubic polynomial: $y = ax^3 + bx^2 + bx + d$
+2. Don't be surprised if this takes a while to figure out.
