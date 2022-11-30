@@ -30,7 +30,7 @@ Parametrization uses an independent parameter (aka variable) to compute points o
 
 #### Exercise 2.4.1
 
-1. Copy the template/TwoD project. Run it.
+1. Copy the template/twod project. Run it.
 2. Observe that there is a coordinate system centered at the origin.
 3. Observe that there is a label for the x axis and for the y axis, and both are defined in the coordinate system class.
 4. Using only the fact that a circle is defined thus $x^2 + y^2 = r^2$, draw a circle like the one in the diagrams above by designing a circle class.  Make the circle class extend `THREE.LineLoop` so that instances of it may be added directly to the scene (similar to the coordinate system)
