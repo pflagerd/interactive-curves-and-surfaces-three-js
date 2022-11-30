@@ -25,3 +25,16 @@ From a design standpoint the explicit form is deficient in several ways:
 The parametric form of a curve is not subject to these limitations. Moreover, it provides a method, known as *parameterization*, that defines motion on the curve. Motion on the curve refers to the way that the point $(x, y)$ traces out the curve .
 
 Parametrization uses an independent parameter (aka variable) to compute points on the curve.  It gives the "motion" of a point on the curve.
+
+
+
+#### Exercise 2.4.1
+
+1. Copy the template/TwoD project. Run it.
+2. Observe that there is a coordinate system centered at the origin.
+3. Observe that there is a label for the x axis and for the y axis, and both are defined in the coordinate system class.
+4. Using only the fact that a circle is defined thus $x^2 + y^2 = r^2$, draw a circle like the one in the diagrams above by designing a circle class.  Make the circle class extend `THREE.LineLoop` so that instances of it may be added directly to the scene (similar to the coordinate system)
+5. Create a single instance and add it to the scene.
+6. Add a vertical line with two small circles as shown in the top diagram above.
+7. Don't forget the text "The circle has two values along this line".  You can use the labels defined in the coordinate system class as an example.
+
