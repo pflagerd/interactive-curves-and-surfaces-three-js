@@ -35,7 +35,7 @@ You will need to refer to the three.js API documentation for version r124 a lot.
 
 1) You will see a browser open with the reference doc available which looks something like this:
 
-![img_1.png](img_1.png)
+![img_1.png](.md/ 3 A Design Challenge The Need for CAGD/img_1.png)
 
 8) Use ^F to search the Reference docs for the word "points".
 

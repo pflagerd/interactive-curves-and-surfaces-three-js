@@ -136,6 +136,6 @@ class CircleBufferGeometry extends BufferGeometry {
 ```
 12. As a last finishing touch (assuming you have the three lines and four little circles), can you draw a rectangle around the whole thing?
 10. For extra karma, can you adapt the circle class to make a rectangle class?
-![img_2.png](img_2.png)
+![img_2.png](.md/ 5 Control Points The Start of CAGD/img_2.png)
 
 11. For extra extra karma, can you make your original 3-line-segments into a class?

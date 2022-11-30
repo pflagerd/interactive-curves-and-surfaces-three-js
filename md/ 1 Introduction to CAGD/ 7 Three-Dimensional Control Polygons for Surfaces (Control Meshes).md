@@ -9,4 +9,4 @@ Bézier curves behave just as well in three dimensions as in two.  This image sh
 
 1. Copy the template/teapot project. Run it.
 2. Play with the controls and observe how it works.
-3. 
+3. Can you display a wireframe as shown above?
