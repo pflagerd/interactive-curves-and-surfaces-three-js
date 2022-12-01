@@ -43,7 +43,7 @@ Are you beginning to see a problem with the explicit (and implicit) form?
 
   $$y'_{top} = -\frac{x}{\sqrt{r^2 - x^2}}$$
 
-  $$y'_{bottom} = -\frac{x}{\sqrt{r^2 - x^2}}$$
+  $$y'_{bottom} = \frac{x}{\sqrt{r^2 - x^2}}$$
 
   Hence there are two points on the circle where the derivative of $y=\pm\sqrt{r^2-x^2}$ is undefined. Using limits, we can show that the slope of the circle graph is infinite at those two points (where $x = \pm r$):
 
