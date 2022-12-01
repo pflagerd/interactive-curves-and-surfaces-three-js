@@ -26,33 +26,19 @@ class XYAxes extends THREE.Group {
         const xLine = new THREE.Line( xGeometry, xMaterial );
         this.add(xLine);
 
-        {
-            this.xLabelElement = document.createElement('div');
-            document.body.appendChild(this.xLabelElement);
-            this.xLabelElement.style.position = 'absolute';
-            this.xLabelElement.style.zIndex = '10';
-            this.xLabelElement.textContent = 'x';
-            this.xLabelElement.style.fontFamily = 'Arial';
-            this.xLabelElement.style.fontSize = '14pt';
+        this.xLabelElement = document.createElement('div');
+        document.body.appendChild(this.xLabelElement);
+        this.xLabelElement.style.position = 'absolute';
+        this.xLabelElement.style.zIndex = '10';
+        this.xLabelElement.textContent = 'x';
+        this.xLabelElement.style.fontFamily = 'Arial';
+        this.xLabelElement.style.fontSize = '14pt';
+        xLine.onAfterRender = function() {
             const screenPosition = this.container.getScreenPosition(9, 0);
             this.xLabelElement.style.left = (screenPosition.x + 5) + 'px';
             console.log(this.xLabelElement.offsetHeight + 2);
-            this.xLabelElement.style.top = (screenPosition.y - (this.xLabelElement.offsetHeight + 2) / 2 ) + 'px';
-        }
-
-        {
-            this.yLabelElement = document.createElement('div');
-            document.body.appendChild(this.yLabelElement);
-            this.yLabelElement.style.position = 'absolute';
-            this.yLabelElement.style.zIndex = '10';
-            this.yLabelElement.textContent = 'y = f(x)';
-            this.yLabelElement.style.fontFamily = 'Arial';
-            this.yLabelElement.style.fontSize = '14pt';
-            const screenPosition = this.container.getScreenPosition(0, 9);
-            this.yLabelElement.style.left = (screenPosition.x - (this.yLabelElement.offsetWidth + 2) / 2) + 'px';
-            console.log(this.yLabelElement.offsetHeight + 2);
-            this.yLabelElement.style.top = (screenPosition.y - this.yLabelElement.offsetHeight - 5) + 'px';
-        }
+            this.xLabelElement.style.top = (screenPosition.y - (this.xLabelElement.offsetHeight + 2) / 2) + 'px';
+        }.bind(this);
 
         const yMaterial = new THREE.LineBasicMaterial( { color: 0x00FF00, linewidth: 2 } );
         const yGeometry = new THREE.BufferGeometry();
@@ -73,33 +59,26 @@ class XYAxes extends THREE.Group {
 
         this.add(yLine);
 
-
-        const geometry = new THREE.BufferGeometry();
-        geometry.setFromPoints([new THREE.Vector2(0, 0)]);
-
-        const material = new THREE.PointsMaterial({color: 0x888888, size: 6});
-
-        const points = new THREE.Points(geometry, material);
-
-        this.add(points);
-    }
-
-    render() {
-        {
-            const screenPosition = this.container.getScreenPosition(9, 0);
-            this.xLabelElement.style.left = (screenPosition.x + 5) + 'px';
-            console.log(this.xLabelElement.offsetHeight + 2);
-            this.xLabelElement.style.top = (screenPosition.y - (this.xLabelElement.offsetHeight + 2) / 2) + 'px';
-        }
-
-        {
+        this.yLabelElement = document.createElement('div');
+        document.body.appendChild(this.yLabelElement);
+        this.yLabelElement.style.position = 'absolute';
+        this.yLabelElement.style.zIndex = '10';
+        this.yLabelElement.textContent = 'y = f(x)';
+        this.yLabelElement.style.fontFamily = 'Arial';
+        this.yLabelElement.style.fontSize = '14pt';
+        yLine.onAfterRender = function() {
             const screenPosition = this.container.getScreenPosition(0, 9);
             this.yLabelElement.style.left = (screenPosition.x - (this.yLabelElement.offsetWidth + 2) / 2) + 'px';
             console.log(this.yLabelElement.offsetHeight + 2);
             this.yLabelElement.style.top = (screenPosition.y - this.yLabelElement.offsetHeight - 5) + 'px';
-        }
+        }.bind(this);
 
+        const geometry = new THREE.BufferGeometry();
+        geometry.setFromPoints([new THREE.Vector2(0, 0)]);
+        const material = new THREE.PointsMaterial({color: 0x888888, size: 6});
+        const points = new THREE.Points(geometry, material);
 
+        this.add(points);
     }
 }
 
@@ -133,9 +112,7 @@ class TwoD {
         // GUI
         this.setupGui();
 
-        this.xyAxes = new XYAxes(this);
-
-        this.scene.add(this.xyAxes)
+        this.scene.add(new XYAxes(this))
 
     }
 
@@ -155,7 +132,6 @@ class TwoD {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.render();
-        this.xyAxes.render();
     }
 
     setupGui() {
