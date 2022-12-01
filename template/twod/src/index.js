@@ -8,19 +8,38 @@ class XYAxes extends THREE.Group {
         super();
 
         const xMaterial = new THREE.LineBasicMaterial( { color: 0xFF0000, linewidth: 2 } );
-
         const xGeometry = new THREE.BufferGeometry();
-        xGeometry.setFromPoints( [new THREE.Vector2(-9, 0), new THREE.Vector2(9, 0)] )
-
+        xGeometry.setFromPoints([
+            new THREE.Vector2(-9, 0),
+            new THREE.Vector2(-8.7, -0.2),
+            new THREE.Vector2(-8.8, 0),
+            new THREE.Vector2(-8.7, 0.2),
+            new THREE.Vector2(-9, 0),
+            new THREE.Vector2(9, 0),
+            new THREE.Vector2(8.7, 0.2),
+            new THREE.Vector2(8.8, 0),
+            new THREE.Vector2(8.7, -0.2),
+            new THREE.Vector2(9, 0),
+        ]);
         const xLine = new THREE.Line( xGeometry, xMaterial );
-
         this.add(xLine);
 
 
         const yMaterial = new THREE.LineBasicMaterial( { color: 0x00FF00, linewidth: 2 } );
 
         const yGeometry = new THREE.BufferGeometry();
-        yGeometry.setFromPoints( [new THREE.Vector2(0, -9), new THREE.Vector2(0, 9)] )
+        yGeometry.setFromPoints([
+            new THREE.Vector2(0, -9),
+            new THREE.Vector2(-0.2, -8.7),
+            new THREE.Vector2(0, -8.8),
+            new THREE.Vector2(0.2, -8.7),
+            new THREE.Vector2(0, -9),
+            new THREE.Vector2(0, 9),
+            new THREE.Vector2(0.2, 8.7),
+            new THREE.Vector2(0, 8.8),
+            new THREE.Vector2(-0.2, 8.7),
+            new THREE.Vector2(0, 9),
+        ]);
 
         const yLine = new THREE.Line( yGeometry, yMaterial );
 
