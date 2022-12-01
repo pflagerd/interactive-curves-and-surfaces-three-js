@@ -34,7 +34,7 @@ class XYAxes extends THREE.Group {
             this.xLabelElement.textContent = 'x';
             this.xLabelElement.style.fontFamily = 'Arial';
             this.xLabelElement.style.fontSize = '14pt';
-            const screenPosition = container.getScreenPosition(9, 0);
+            const screenPosition = this.container.getScreenPosition(9, 0);
             this.xLabelElement.style.left = (screenPosition.x + 5) + 'px';
             console.log(this.xLabelElement.offsetHeight + 2);
             this.xLabelElement.style.top = (screenPosition.y - (this.xLabelElement.offsetHeight + 2) / 2 ) + 'px';
@@ -48,7 +48,7 @@ class XYAxes extends THREE.Group {
             this.yLabelElement.textContent = 'y = f(x)';
             this.yLabelElement.style.fontFamily = 'Arial';
             this.yLabelElement.style.fontSize = '14pt';
-            const screenPosition = container.getScreenPosition(0, 9);
+            const screenPosition = this.container.getScreenPosition(0, 9);
             this.yLabelElement.style.left = (screenPosition.x - (this.yLabelElement.offsetWidth + 2) / 2) + 'px';
             console.log(this.yLabelElement.offsetHeight + 2);
             this.yLabelElement.style.top = (screenPosition.y - this.yLabelElement.offsetHeight - 5) + 'px';
@@ -85,7 +85,21 @@ class XYAxes extends THREE.Group {
     }
 
     render() {
-        super.render();
+        {
+            const screenPosition = this.container.getScreenPosition(9, 0);
+            this.xLabelElement.style.left = (screenPosition.x + 5) + 'px';
+            console.log(this.xLabelElement.offsetHeight + 2);
+            this.xLabelElement.style.top = (screenPosition.y - (this.xLabelElement.offsetHeight + 2) / 2) + 'px';
+        }
+
+        {
+            const screenPosition = this.container.getScreenPosition(0, 9);
+            this.yLabelElement.style.left = (screenPosition.x - (this.yLabelElement.offsetWidth + 2) / 2) + 'px';
+            console.log(this.yLabelElement.offsetHeight + 2);
+            this.yLabelElement.style.top = (screenPosition.y - this.yLabelElement.offsetHeight - 5) + 'px';
+        }
+
+
     }
 }
 
@@ -119,7 +133,9 @@ class TwoD {
         // GUI
         this.setupGui();
 
-        this.scene.add(new XYAxes(this))
+        this.xyAxes = new XYAxes(this);
+
+        this.scene.add(this.xyAxes)
 
     }
 
@@ -139,6 +155,7 @@ class TwoD {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.render();
+        this.xyAxes.render();
     }
 
     setupGui() {
