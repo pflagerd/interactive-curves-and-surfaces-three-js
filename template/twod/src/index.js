@@ -4,8 +4,10 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import dat from "dat-gui";
 
 class XYAxes extends THREE.Group {
-    constructor() {
+    constructor(container) {
         super();
+
+        this.container = container;
 
         const xMaterial = new THREE.LineBasicMaterial( { color: 0xFF0000, linewidth: 2 } );
         const xGeometry = new THREE.BufferGeometry();
@@ -24,9 +26,35 @@ class XYAxes extends THREE.Group {
         const xLine = new THREE.Line( xGeometry, xMaterial );
         this.add(xLine);
 
+        {
+            this.xLabelElement = document.createElement('div');
+            document.body.appendChild(this.xLabelElement);
+            this.xLabelElement.style.position = 'absolute';
+            this.xLabelElement.style.zIndex = '10';
+            this.xLabelElement.textContent = 'x';
+            this.xLabelElement.style.fontFamily = 'Arial';
+            this.xLabelElement.style.fontSize = '14pt';
+            const screenPosition = container.getScreenPosition(9, 0);
+            this.xLabelElement.style.left = (screenPosition.x + 5) + 'px';
+            console.log(this.xLabelElement.offsetHeight + 2);
+            this.xLabelElement.style.top = (screenPosition.y - (this.xLabelElement.offsetHeight + 2) / 2 ) + 'px';
+        }
+
+        {
+            this.yLabelElement = document.createElement('div');
+            document.body.appendChild(this.yLabelElement);
+            this.yLabelElement.style.position = 'absolute';
+            this.yLabelElement.style.zIndex = '10';
+            this.yLabelElement.textContent = 'y = f(x)';
+            this.yLabelElement.style.fontFamily = 'Arial';
+            this.yLabelElement.style.fontSize = '14pt';
+            const screenPosition = container.getScreenPosition(0, 9);
+            this.yLabelElement.style.left = (screenPosition.x - (this.yLabelElement.offsetWidth + 2) / 2) + 'px';
+            console.log(this.yLabelElement.offsetHeight + 2);
+            this.yLabelElement.style.top = (screenPosition.y - this.yLabelElement.offsetHeight - 5) + 'px';
+        }
 
         const yMaterial = new THREE.LineBasicMaterial( { color: 0x00FF00, linewidth: 2 } );
-
         const yGeometry = new THREE.BufferGeometry();
         yGeometry.setFromPoints([
             new THREE.Vector2(0, -9),
@@ -54,18 +82,20 @@ class XYAxes extends THREE.Group {
         const points = new THREE.Points(geometry, material);
 
         this.add(points);
+    }
 
-
+    render() {
+        super.render();
     }
 }
 
 class TwoD {
     constructor() {
-
         document.head.insertAdjacentHTML("beforeEnd", "<link rel=\"icon\" href=\"data:image/x-icon;base64,AA\">");
 
         document.body.style.margin = "0";
         document.body.style.padding = "0";
+        document.body.style.position = 'relative';
         document.body.style.overflow = "hidden";
 
         this.renderer = new THREE.WebGLRenderer();
@@ -84,13 +114,24 @@ class TwoD {
 
         this.cameraControls = new OrbitControls(this.camera, this.renderer.domElement);
         this.cameraControls.target.set(0, 0, 0);
-        this.cameraControls.addEventListener('change', this.render);
+        this.cameraControls.addEventListener('change', this.render.bind(this));
 
         // GUI
         this.setupGui();
 
-        this.scene.add(new XYAxes())
+        this.scene.add(new XYAxes(this))
 
+    }
+
+    getScreenPosition(x, y, z) {
+        let vector = new THREE.Vector3( x, y, z );
+
+        vector.project(this.camera);
+
+        vector.x = Math.round( (  vector.x + 1 ) * window.innerWidth / 2 );
+        vector.y = Math.round( ( -vector.y + 1 ) * window.innerHeight / 2 );
+
+        return vector;
     }
 
     onWindowResize() {
@@ -186,6 +227,7 @@ class TwoD {
     render() {
         this.renderer.render(this.scene, this.camera);
     }
+
 
 }
 
