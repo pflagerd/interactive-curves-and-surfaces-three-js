@@ -33,6 +33,7 @@ So for every input value of x, we have to evaluate two functions.
 Are you beginning to see a problem with the explicit (and implicit) form? 
 
 * Single-Valued Problem
+
   All explicit forms are single-valued.  In other words, for any value of $x$, there is exactly one value of $y$. Explicit form is a good way to represent a function, but you sometimes need more than one function to fully describe a curve as we've seen is the case for a circle.
 
   ![1623258117854](.md/ 4 The Parametric Curve/1623258117854.png)
@@ -97,14 +98,27 @@ In this exercise, you will draw a circle using an explicit form.
 
 #### Exercise 2.4.2
 
-1. Copy your exercise 2.4.1 to a new project.
+In this exercise, you will add a couple more geometry details to your graph.
 
-2. Add a vertical line to the diagram similar to the one in the top diagram above.
-
-3. Add two small circles similar to the ones in the top diagram above.  You may do this by creating two more instances of your original circle, and transforming them thus:
+1. Add a vertical line to the diagram similar to the one in the top diagram above.
+1. Add two small circles similar to the ones in the top diagram above.  You may do this by creating two more instances of your original circle, and transforming them thus:
 
    ```javascript
    let smallCircle1 = new Circle(0.2);
-   smallCircle1.position = new Vector2(3, 5);
+   smallCircle1.position = new THREE.Vector3(3, 5, 0);
    ```
 
+
+#### Exercise 2.4.3
+
+In this exercise, you will reimplement the circle class using the popular Parametric Form mentioned above. 
+
+1. Make a copy of your Exercise 2.4.1
+1. Change the implementation of your Circle class to use the popular Parametric Form mentioned above. 
+
+
+#### Exercise 2.4.4
+
+In this exercise, you will reimplement the line class using the parameterization mentioned above.
+
+1. Change the implementation of the code you used to make a line in your exercise to use the popular Parametric Form mentioned above. 
