@@ -30,5 +30,6 @@ let targets = {
 }
 
 // foreach ejs target older than any of its dependencies, regenerate it with ejs
+// thus: ejs ./thing.ejs -f data_file.json -o ./thing.html
 
 console.log("Hello World!");
