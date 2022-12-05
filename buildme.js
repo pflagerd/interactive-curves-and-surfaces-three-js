@@ -14,8 +14,10 @@ if (!shelljs.which('ejs')) {
     shelljs.exit(1);
 }
 
-let dependencies = {
-    file: "html/index.ejs", dependsOn: [ "html/css/base.css",
+let targets = {
+    "html/index.html" : "html/index.ejs",
+    "html/index.ejs" : [
+        "html/css/base.css",
         "html/css/vendor.css",
         "html/css/main.css",
         "html/js/modernizr.js",
@@ -27,5 +29,6 @@ let dependencies = {
         "images/thumbs/masonry/woodcraft-600.jpg" ],
 }
 
+// foreach ejs target older than any of its dependencies, regenerate it with ejs
 
 console.log("Hello World!");
