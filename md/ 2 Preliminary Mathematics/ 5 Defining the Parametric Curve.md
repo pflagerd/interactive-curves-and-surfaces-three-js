@@ -12,5 +12,10 @@ As $t$ varies from ${-\pi}$ to ${\pi}$ , a circle is swept out by $(x(t), y(t))$
 
 **Exercise 2.5**
 
-Write an application in threejs using `template/` as a starting point that has all the same elements and functions of the one shown in Image 2.5 .
+Write an application in that has all the same elements and functions of the one shown in Image 2.5 .
+
+1. You may start from one of the template/ projects, or one of your own .
+2. Make it object oriented.
+
+
 

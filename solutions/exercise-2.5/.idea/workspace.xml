@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8c34b-726f-4a81-a2a3-130eae8d561d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../html/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../md/ 2 Preliminary Mathematics/ 5 Defining the Parametric Curve.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../md/ 2 Preliminary Mathematics/ 5 Defining the Parametric Curve.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="36f8c34b-726f-4a81-a2a3-130eae8d561d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +26,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/oy753c/Desktop/interactive-curves-and-surfaces-three-js/solutions/exercise-2.5",
+    "last_opened_file_path": "/home/oy753c/Desktop/interactive-curves-and-surfaces-three-js",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670261052728</updated>
-      <workItem from="1670261053850" duration="527000" />
+      <workItem from="1670261053850" duration="737000" />
     </task>
     <servers />
   </component>

@@ -4,8 +4,12 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import dat from "dat-gui";
 
 class XYAxes extends THREE.Group {
+
     constructor(container) {
         super();
+
+        this.xAxis = true;
+        this.yAxis = true;
 
         this.container = container;
 
@@ -109,10 +113,16 @@ class TwoD {
         this.cameraControls.target.set(0, 0, 0);
         this.cameraControls.addEventListener('change', this.render.bind(this));
 
-        // GUI
-        this.setupGui();
+        let xyAxes = new XYAxes(this);
 
-        this.scene.add(new XYAxes(this))
+        // little control dialog
+        let gui = new dat.GUI();
+        let h = gui.addFolder( "Axes" );
+        h.add( xyAxes, "xAxis", false, true, true ).name( "xAxis" ).onChange( this.render );
+        h.add( xyAxes, "yAxis", false, true, true ).name( "yAxis" ).onChange( this.render );
+        h.open();
+
+        this.scene.add(xyAxes);
 
     }
 
@@ -135,6 +145,7 @@ class TwoD {
     }
 
     setupGui() {
+
 
         //     effectController = {
         //
