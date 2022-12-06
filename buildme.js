@@ -14,9 +14,8 @@ function file(filename) {
     try {
         const stats = fs.statSync(filename)
 
-        // print file last modified date
-        console.log(`File Data Last Modified: ${stats.mtime}`)
-        console.log(`File Status Last Modified: ${stats.ctime}`)
+        // console.log(`File Data Last Modified: ${stats.mtime}`)
+        // console.log(`File Status Last Modified: ${stats.ctime}`)
         return { lastModified: stats.mtime};
     } catch (error) {
         return { lastModified: new Date().setTime(0) }

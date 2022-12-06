@@ -2206,7 +2206,7 @@ input::-moz-focus-inner {
   -webkit-flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  width: 300px;
+  width: 390px;
   background-color: #151515;
   padding-top: 6.4rem;
   padding-right: 3.2rem;
@@ -2729,14 +2729,14 @@ body.search-is-visible {
  * ------------------------------------------------------------------- */
 @media screen and (max-width:1600px) {
   .s-header {
-    width: 290px;
+    width: 390px;
   }
 
 }
 
 @media screen and (max-width:1200px) {
   .s-header {
-    width: 270px;
+    width: 300px;
     padding-right: 2.8rem;
     padding-left: 4rem;
   }
