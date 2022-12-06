@@ -29,7 +29,9 @@ let targets = {
         "images/thumbs/masonry/woodcraft-600.jpg" ],
 }
 
-// foreach ejs target older than any of its dependencies, regenerate it with ejs
+// if any dependency of target younger than target, regenerate target with ejs
+if (targets["html/index.html"].some((filename) => { return file["html/index.html"].lastModified > file[filename].lastModified }))
+    ejs("html/index.ejs", "html/index.html", { domain: domain, revision: revision});
 // thus: ejs ./thing.ejs -f data_file.json -o ./thing.html
 
 console.log("Hello World!");
