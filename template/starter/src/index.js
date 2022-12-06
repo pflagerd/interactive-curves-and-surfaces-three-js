@@ -1,9 +1,12 @@
 import * as THREE from 'three';
+import dat from 'dat-gui';
+
 
 function main() {
     document.body.style.margin = "0";
     document.body.style.padding = "0";
     document.body.style.overflow = "hidden";
+
 
     const scene = new THREE.Scene();
 
@@ -29,13 +32,22 @@ function main() {
     camera.position.z = 5;
 
     const animate = function () {
-        requestAnimationFrame( animate );
+        if (animation.animate) {
 
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
+            requestAnimationFrame(animate);
+
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+        }
 
         renderer.render( scene, camera );
     };
+
+    let gui = new dat.GUI();
+    let animation = {
+        animate: true
+    }
+    gui.add(animation , "animate", false, true, true ).name( "animate" ).onChange( animate );
 
     // ACTION
     animate();
