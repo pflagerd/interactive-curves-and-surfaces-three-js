@@ -16,7 +16,7 @@ function main() {
     light.position.set(-1, 2, 4);
     scene.add(light);
 
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize( window.innerWidth, window.innerHeight );
     renderer.physicallyCorrectLights = true;
     renderer.setPixelRatio(window.devicePixelRatio);
