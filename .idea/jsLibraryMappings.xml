@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@types/shelljs, katex}" />
-    <includedPredefinedLibrary name="Node.js Core" />
+    <file url="PROJECT" libraries="{@types/chrome, @types/dom4, @types/node, @types/three, @types/three-dat.gui}" />
     <excludedPredefinedLibrary name="HTML" />
   </component>
 </project>

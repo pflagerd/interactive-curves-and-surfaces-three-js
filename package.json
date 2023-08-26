@@ -4,5 +4,9 @@
     "live-server": "^1.2.2",
     "shelljs": "^0.8.5"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/chrome": "^0.0.244",
+    "@types/dom4": "^2.0.2"
+  }
 }
